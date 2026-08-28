@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors mapping from Stitch design system */
+  --color-secondary: #bcc7de;
+  --color-surface-dim: #051424;
+  --color-tertiary: #e8ecff;
+  --color-on-secondary-fixed-variant: #3c475a;
+  --color-surface-tint: #00daf3;
+  --color-inverse-on-surface: #233143;
+  --color-tertiary-container: #c8d0ea;
+  --color-tertiary-fixed-dim: #bec6e0;
+  --color-secondary-fixed: #d8e3fb;
+  --color-error: #ffb4ab;
+  --color-secondary-fixed-dim: #bcc7de;
+  --color-surface-variant: #273647;
+  --color-on-tertiary-container: #51596f;
+  --color-outline: #849396;
+  --color-on-secondary: #263143;
+  --color-surface-container-highest: #273647;
+  --color-error-container: #93000a;
+  --color-inverse-surface: #d4e4fa;
+  --color-on-tertiary-fixed-variant: #3f465c;
+  --color-surface-container: #122131;
+  --color-on-primary-fixed: #001f24;
+  --color-surface-container-low: #0d1c2d;
+  --color-surface: #051424;
+  --color-inverse-primary: #006875;
+  --color-background: #0B0E14;
+  --color-on-tertiary-fixed: #131b2e;
+  --color-secondary-container: #3e495d;
+  --color-surface-bright: #2c3a4c;
+  --color-primary-fixed-dim: #00daf3;
+  --color-on-surface: #d4e4fa;
+  --color-on-primary-fixed-variant: #004f58;
+  --color-on-secondary-container: #aeb9d0;
+  --color-on-surface-variant: #bac9cc;
+  --color-on-secondary-fixed: #111c2d;
+  --color-primary: #c3f5ff;
+  --color-on-background: #d4e4fa;
+  --color-primary-container: #00e5ff;
+  --color-surface-container-lowest: #010f1f;
+  --color-on-error-container: #ffdad6;
+  --color-primary-fixed: #9cf0ff;
+  --color-surface-container-high: #1c2b3c;
+  --color-on-primary-container: #00626e;
+  --color-on-primary: #00363d;
+  --color-outline-variant: #30363D;
+  --color-on-tertiary: #283044;
+  --color-on-error: #690005;
+  --color-tertiary-fixed: #dae2fd;
+  --color-surface-level-1: #161B22;
+  --color-surface-level-2: #1C2128;
+  --color-electric-cyan: #00daf3;
+
+  /* Border radius */
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  /* Custom Spacing values */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-gutter: 16px;
+  --spacing-unit: 4px;
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 32px;
+  --spacing-max-width: 1440px;
+}
+
+body {
+  background-color: #0B0E14;
+  color: #d4e4fa;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Scrollbar for sidebars / list containers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #122131;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #30363D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #51596f;
+}
+
+/* Custom animations & interactive classes */
+.network-node {
+  transition: all 0.2s ease-in-out;
+}
+
+.network-node:hover {
+  filter: drop-shadow(0 0 8px rgba(0, 218, 243, 0.5));
+}
+
+.network-link {
+  stroke: #30363D;
+  stroke-width: 1.5;
+  transition: stroke 0.2s;
+}
+
+.network-link:hover {
+  stroke: #00daf3;
+}
