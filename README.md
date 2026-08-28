@@ -205,6 +205,8 @@ This allows the graph to naturally represent collaboration and technology ecosys
 Graph Model Diagram
 
 The following diagram represents the core graph structure:
+<img width="992" height="446" alt="image" src="https://github.com/user-attachments/assets/dfec61cc-b89d-43bc-a0aa-be44217c3a1a" />
+
 
 This structure allows the application to answer relationship-oriented questions without flattening the graph into unrelated tables.
 
@@ -490,13 +492,10 @@ Technology ecosystem
 Featured network graph
 Screenshot
 
-Place your Overview screenshot here.
+<img width="1906" height="915" alt="image" src="https://github.com/user-attachments/assets/d0079ceb-8c79-4f74-ab1a-0694b69ccdc4" />
+
 
 [SCREENSHOT: Overview dashboard]
-
-Recommended screenshot:
-
-Show the main dashboard with the statistics cards, Technology Ecosystem section, and Featured Network graph.
 
 2. Explore
 
@@ -510,14 +509,9 @@ Repository relationships
 Technology intersections
 Screenshot
 
-Place your Explore screenshot here.
+<img width="1896" height="900" alt="image" src="https://github.com/user-attachments/assets/c36126f6-0bbd-4b2e-b37d-06af69aa9e15" />
 
 [SCREENSHOT: Explore page]
-
-Recommended screenshot:
-
-Show an Explore query such as React + Neo4j and the resulting developers/repositories.
-
 3. Developer Profiles
 
 Each developer has a dedicated profile page.
@@ -533,14 +527,10 @@ Contribution activity
 Technology experience
 Screenshot
 
-Place your Developer Profile screenshot here.
+<img width="1897" height="912" alt="image" src="https://github.com/user-attachments/assets/cbc4438d-af55-4a2b-b63c-75990757edd9" />
+
 
 [SCREENSHOT: Developer Profile]
-
-Recommended screenshot:
-
-Show a developer profile with repositories, technology experience, collaborators, and contribution activity.
-
 4. Technology Explorer
 
 The Technology section allows users to explore technologies in the graph.
@@ -553,13 +543,10 @@ Repositories using the technology
 Related technologies
 Screenshot
 
-Place your Technology Explorer screenshot here.
+<img width="1895" height="907" alt="image" src="https://github.com/user-attachments/assets/5a5c60fb-42ca-4d75-a56f-43ecabd1f35e" />
+
 
 [SCREENSHOT: Technology Explorer]
-
-Recommended screenshot:
-
-Show a technology detail page with related developers, repositories, and related technologies.
 
 5. Network Explorer
 
@@ -575,13 +562,11 @@ Users can interact with the graph and inspect connected entities.
 
 Screenshot
 
-Place your Network Explorer screenshot here.
+<img width="1916" height="902" alt="image" src="https://github.com/user-attachments/assets/7a76fe66-ac0c-4431-9510-9321664df704" />
+
 
 [SCREENSHOT: Network Explorer]
 
-Recommended screenshot:
-
-Show the graph with multiple connected developers, repositories, and technologies.
 
 6. Connection Explorer
 
@@ -610,13 +595,10 @@ Repository 2
 Developer B
 Screenshot
 
-Place your Connection Explorer screenshot here.
+<img width="1910" height="910" alt="image" src="https://github.com/user-attachments/assets/3b47ca34-35fb-4796-bde1-9903b23b86da" />
+
 
 [SCREENSHOT: Connection Explorer]
-
-Recommended screenshot:
-
-Show two selected developers and the resulting path through the graph.
 
 7. Global Search
 
@@ -637,13 +619,10 @@ Repository search is backed by the repository API rather than treating repositor
 
 Screenshot
 
-Place your Global Search screenshot here.
+<img width="1897" height="896" alt="image" src="https://github.com/user-attachments/assets/a2dbbdee-450e-44d2-9bad-d61f72941dc3" />
+
 
 [SCREENSHOT: Global Search]
-
-Recommended screenshot:
-
-Show the search dropdown containing developer and repository results.
 
 Routing
 
