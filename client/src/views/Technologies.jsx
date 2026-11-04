@@ -5,7 +5,14 @@ import { api } from '../api/client';
 export default function Technologies() {
   const navigate = useNavigate();
   const [technologies, setTechnologies] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Debounce typing so we don't hit the API on every keystroke
+  useEffect(() => {
+    const t = setTimeout(() => setSearchQuery(searchInput), 300);
+    return () => clearTimeout(t);
+  }, [searchInput]);
   const [categoryFilter, setCategoryFilter] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -59,8 +66,8 @@ export default function Technologies() {
           <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-electric-cyan transition-colors">search</span>
           <input 
             type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
             placeholder="Search by technology name..."
             className="w-full bg-[#0B0E14] border border-[#30363D] rounded py-2 pl-10 pr-4 text-white placeholder-outline-variant focus:outline-none focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all"
           />

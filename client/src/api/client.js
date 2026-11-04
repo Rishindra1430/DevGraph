@@ -4,12 +4,35 @@ import axios from 'axios';
 // In production, set VITE_API_URL to the absolute backend URL.
 const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
+// Render's free tier spins the backend down after idle periods; the first
+// request after a cold start can take 30-60s to come back.
+const REQUEST_TIMEOUT = 45000;
+const COLD_START_RETRIES = 2;
+
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 15000,
+  timeout: REQUEST_TIMEOUT,
   headers: {
     'Content-Type': 'application/json',
   },
+});
+
+// Retry once/twice on timeout or network error (cold start), not on real HTTP error responses.
+apiClient.interceptors.response.use(undefined, async (error) => {
+  const config = error.config;
+  if (!config || error.response) {
+    return Promise.reject(error);
+  }
+
+  const isRetriable = error.code === 'ECONNABORTED' || !error.response;
+  config.__retryCount = config.__retryCount || 0;
+
+  if (isRetriable && config.__retryCount < COLD_START_RETRIES) {
+    config.__retryCount += 1;
+    return apiClient(config);
+  }
+
+  return Promise.reject(error);
 });
 
 // Centralized error helper

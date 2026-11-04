@@ -20,6 +20,8 @@ function navClass({ isActive }) {
     : 'text-on-surface-variant hover:bg-[#1C2128] hover:text-on-surface transition-all rounded-lg px-4 py-2 flex items-center gap-3 group cursor-pointer';
 }
 
+const FALLBACK_AVATAR = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="#1C2128"/><circle cx="16" cy="12" r="5" fill="#00daf3"/><path d="M6 28c1-6 5-9 10-9s9 3 10 9z" fill="#00daf3"/></svg>');
+
 export default function AppLayout() {
   const navigate = useNavigate();
 
@@ -273,7 +275,7 @@ export default function AppLayout() {
           <img
             onClick={() => setUpgradeModalOpen(true)}
             className="w-8 h-8 rounded-full object-cover border border-[#30363D] cursor-pointer"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbrjo3jdCnLk_QbpKcnOJ-RhA5MKXkZ9UZphjYypwGQG_G_SS5oCwo0urruz_f2KHUQJ_3OUHKUpBuVZIyykPqwjOnxMMpI7dqzOdb8O8oPiZvZVwVZaEUmzQG9NEtuVutV8Pa6sbllQIwne5dhHqWXAnz5JieIHjYdljg4Hg_xBFSuVJKaAP8dZHLYO8VUygwEehropx-cZVEFTv7d6yzFLgPMmxvDya7seovc0CGSmzVopazrOWJ"
+            src={FALLBACK_AVATAR}
             alt="Profile"
           />
         </div>
@@ -357,7 +359,7 @@ export default function AppLayout() {
                           {item.type === 'developer' ? (
                             <img
                               className="w-8 h-8 rounded-full object-cover border border-[#30363D]"
-                              src={item.avatar || 'https://lh3.googleusercontent.com/aida-public/AB6AXuCbrjo3jdCnLk_QbpKcnOJ-RhA5MKXkZ9UZphjYypwGQG_G_SS5oCwo0urruz_f2KHUQJ_3OUHKUpBuVZIyykPqwjOnxMMpI7dqzOdb8O8oPiZvZVwVZaEUmzQG9NEtuVutV8Pa6sbllQIwne5dhHqWXAnz5JieIHjYdljg4Hg_xBFSuVJKaAP8dZHLYO8VUygwEehropx-cZVEFTv7d6yzFLgPMmxvDya7seovc0CGSmzVopazrOWJ'}
+                              src={item.avatar || FALLBACK_AVATAR}
                               alt={item.name}
                             />
                           ) : (
@@ -402,7 +404,7 @@ export default function AppLayout() {
             <img
               onClick={() => setUpgradeModalOpen(true)}
               className="w-8 h-8 rounded-full border border-[#30363D] object-cover cursor-pointer hover:border-electric-cyan"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbrjo3jdCnLk_QbpKcnOJ-RhA5MKXkZ9UZphjYypwGQG_G_SS5oCwo0urruz_f2KHUQJ_3OUHKUpBuVZIyykPqwjOnxMMpI7dqzOdb8O8oPiZvZVwVZaEUmzQG9NEtuVutV8Pa6sbllQIwne5dhHqWXAnz5JieIHjYdljg4Hg_xBFSuVJKaAP8dZHLYO8VUygwEehropx-cZVEFTv7d6yzFLgPMmxvDya7seovc0CGSmzVopazrOWJ"
+              src={FALLBACK_AVATAR}
               alt="Profile avatar"
             />
           </div>
@@ -465,7 +467,7 @@ export default function AppLayout() {
                         {item.type === 'developer' ? (
                           <img
                             className="w-8 h-8 rounded-full object-cover border border-[#30363D]"
-                            src={item.avatar || 'https://lh3.googleusercontent.com/aida-public/AB6AXuCbrjo3jdCnLk_QbpKcnOJ-RhA5MKXkZ9UZphjYypwGQG_G_SS5oCwo0urruz_f2KHUQJ_3OUHKUpBuVZIyykPqwjOnxMMpI7dqzOdb8O8oPiZvZVwVZaEUmzQG9NEtuVutV8Pa6sbllQIwne5dhHqWXAnz5JieIHjYdljg4Hg_xBFSuVJKaAP8dZHLYO8VUygwEehropx-cZVEFTv7d6yzFLgPMmxvDya7seovc0CGSmzVopazrOWJ'}
+                            src={item.avatar || FALLBACK_AVATAR}
                             alt={item.name}
                           />
                         ) : (

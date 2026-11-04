@@ -16,6 +16,7 @@ export default function Overview() {
   const [featuredNetworkData, setFeaturedNetworkData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [retryKey, setRetryKey] = useState(0);
 
   useEffect(() => {
     async function loadOverviewData() {
@@ -44,9 +45,9 @@ export default function Overview() {
 
         setStats({
           developers: developersCount,
-          repositories: repositoriesCount || 17, // fallback to seed count
+          repositories: repositoriesCount,
           technologies: technologiesCount,
-          contributions: totalContributions || 260, // fallback
+          contributions: totalContributions,
         });
 
         // Set top technologies
@@ -85,7 +86,7 @@ export default function Overview() {
     }
 
     loadOverviewData();
-  }, []);
+  }, [retryKey]);
 
   if (loading) {
     return (
@@ -112,7 +113,7 @@ export default function Overview() {
         <h3 className="font-headline-md text-xl text-white font-bold">API Connection Error</h3>
         <p className="font-body-lg text-on-surface-variant max-w-[448px]">{error}</p>
         <button 
-          onClick={() => window.location.reload()}
+          onClick={() => { setRetryKey(k => k + 1); }}
           className="bg-primary-container text-on-primary-container font-bold py-2 px-6 rounded hover:opacity-90 transition-opacity"
         >
           Retry Connection
@@ -126,7 +127,7 @@ export default function Overview() {
       {/* Welcome Header */}
       <section className="space-y-2">
         <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white">
-          Good morning <span className="text-primary">👋</span>
+          Welcome to <span className="text-primary">DevGraph</span>
         </h2>
         <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
           Explore the developer ecosystem through its connections. Your intelligence graph is ready.
@@ -144,8 +145,8 @@ export default function Overview() {
           <div>
             <div className="font-headline-lg text-headline-lg text-white font-bold">{stats.developers.toLocaleString()}</div>
             <div className="flex items-center gap-1 mt-1 font-label-sm text-label-sm text-electric-cyan">
-              <span className="material-symbols-outlined text-[12px]">trending_up</span>
-              <span>+12.4% this week</span>
+              
+              <span>Active contributors</span>
             </div>
           </div>
         </div>
@@ -159,8 +160,8 @@ export default function Overview() {
           <div>
             <div className="font-headline-lg text-headline-lg text-white font-bold">{stats.repositories}</div>
             <div className="flex items-center gap-1 mt-1 font-label-sm text-label-sm text-electric-cyan">
-              <span className="material-symbols-outlined text-[12px]">trending_up</span>
-              <span>+8.7% this week</span>
+              
+              <span>Open-source projects</span>
             </div>
           </div>
         </div>
@@ -174,8 +175,8 @@ export default function Overview() {
           <div>
             <div className="font-headline-lg text-headline-lg text-white font-bold">{stats.technologies}</div>
             <div className="flex items-center gap-1 mt-1 font-label-sm text-label-sm text-electric-cyan">
-              <span className="material-symbols-outlined text-[12px]">trending_up</span>
-              <span>+4.2% this week</span>
+              
+              <span>Languages & frameworks</span>
             </div>
           </div>
         </div>
@@ -189,8 +190,8 @@ export default function Overview() {
           <div>
             <div className="font-headline-lg text-headline-lg text-white font-bold">{stats.contributions.toLocaleString()}</div>
             <div className="flex items-center gap-1 mt-1 font-label-sm text-label-sm text-electric-cyan">
-              <span className="material-symbols-outlined text-[12px]">trending_up</span>
-              <span>+15.3% this week</span>
+              
+              <span>Total commits tracked</span>
             </div>
           </div>
         </div>

@@ -222,50 +222,6 @@ export default function DeveloperProfile() {
 
         {/* Right Column: Repositories & Graph Activity mock */}
         <div className="flex flex-col gap-lg lg:col-span-2">
-          {/* Contribution Heatmap Mock */}
-          <section className="bg-[#161B22] border border-[#30363D] rounded-lg p-md flex flex-col gap-md">
-            <div className="flex justify-between items-center">
-              <h2 className="font-headline-md text-body-lg font-semibold text-white font-mono uppercase">Contribution Activity</h2>
-              <span className="font-label-md text-label-md text-on-surface-variant font-mono">Last 90 Days</span>
-            </div>
-            {/* Heatmap Container */}
-            <div className="bg-[#0B0E14] p-md rounded border border-[#30363D]/50 overflow-x-auto">
-              <div className="flex flex-col gap-1 min-w-max">
-                {[...Array(7)].map((_, i) => (
-                  <div key={i} className="flex gap-1">
-                    {[...Array(25)].map((_, j) => {
-                      const lvl = Math.floor(Math.random() * 5); // 0-4
-                      const colors = [
-                        'bg-[#273647]', // Less
-                        'bg-[#006875]', 
-                        'bg-[#00daf3]', 
-                        'bg-[#00e5ff]', 
-                        'bg-[#c3f5ff]'  // More
-                      ];
-                      return (
-                        <div 
-                          key={j} 
-                          className={`w-3 h-3 rounded-[2px] ${colors[lvl]} transition-colors hover:scale-110`} 
-                          title={`${lvl * 3} commits`}
-                        />
-                      );
-                    })}
-                  </div>
-                ))}
-              </div>
-              <div className="flex justify-end gap-sm mt-sm items-center text-xs text-on-surface-variant">
-                <span>Less</span>
-                <div className="flex gap-1">
-                  <div className="w-3 h-3 rounded-[2px] bg-[#273647]" />
-                  <div className="w-3 h-3 rounded-[2px] bg-[#006875]" />
-                  <div className="w-3 h-3 rounded-[2px] bg-[#00daf3]" />
-                  <div className="w-3 h-3 rounded-[2px] bg-[#c3f5ff]" />
-                </div>
-                <span>More</span>
-              </div>
-            </div>
-          </section>
-
           {/* Repositories */}
           <section className="flex flex-col gap-md">
             <h2 className="font-headline-md text-body-lg font-semibold text-white font-mono uppercase pl-2">Top Repositories</h2>

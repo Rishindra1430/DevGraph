@@ -7,7 +7,14 @@ export default function Developers() {
   const [developers, setDevelopers] = useState([]);
   const [techList, setTechList] = useState([]);
   const [selectedTech, setSelectedTech] = useState('');
+  const [searchInput, setSearchInput] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Debounce typing so we don't hit the API on every keystroke
+  useEffect(() => {
+    const t = setTimeout(() => setSearchQuery(searchInput), 300);
+    return () => clearTimeout(t);
+  }, [searchInput]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   
@@ -79,9 +86,9 @@ export default function Developers() {
           <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-electric-cyan transition-colors">search</span>
           <input 
             type="text"
-            value={searchQuery}
+            value={searchInput}
             onChange={(e) => {
-              setSearchQuery(e.target.value);
+              setSearchInput(e.target.value);
               setSkip(0); // reset page
             }}
             placeholder="Search by username or name..."
